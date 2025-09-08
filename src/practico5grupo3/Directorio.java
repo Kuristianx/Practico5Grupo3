@@ -17,14 +17,18 @@ public class Directorio {
         this.directorioTelefono = directorioTelefono;
     }
     
-    public void agregarContacto(Contacto contacto, long numeroTelefono){
-        
+    public boolean agregarContacto(Contacto contacto, long numeroTelefono){
+        if(directorioTelefono.containsKey(numeroTelefono)){
+            return false;
+        } 
+        directorioTelefono.put(numeroTelefono, contacto);
+            return true;
     }
-    public void buscarContacto(){
-        
+    public Contacto buscarContacto(long numeroTelefono){
+        return directorioTelefono.get(numeroTelefono);
     }
     public void buscarTelefono(){
-                
+         
     }
     public void buscarContactos(){
         
