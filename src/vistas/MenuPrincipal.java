@@ -10,6 +10,10 @@ package vistas;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    public static Object getDirectorio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     /**
      * Creates new form MenuPrincipal
      */
