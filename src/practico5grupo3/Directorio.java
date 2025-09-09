@@ -34,8 +34,13 @@ public class Directorio {
     }
     public void buscarContactos(){
         
+        
     }
     public void borrarContactos(){
         
-    }
+    //public void borrarContacto(Long numeroTelefono) {
+    //if (contactos.containsKey(numeroTelefono)) {
+      //  contactos.remove(numeroTelefono);
+    //}
+}
 }
