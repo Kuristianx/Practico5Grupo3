@@ -2,6 +2,7 @@
 package practico5grupo3;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import vistas.MenuPrincipal;
 
@@ -28,7 +29,8 @@ public class Directorio {
         return directorioTelefono.get(numeroTelefono);
     }
     public void buscarTelefono(){
-         
+    
+       
     }
     public void buscarContactos(){
         
