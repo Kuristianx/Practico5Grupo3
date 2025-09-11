@@ -58,6 +58,11 @@ public class Contacto {
         this.direccion = direccion;
     }
 
+    @Override
+    public String toString() {
+        return "Contacto{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", ciudad=" + ciudad + ", direccion=" + direccion + '}';
+    }
+
     
 
 
