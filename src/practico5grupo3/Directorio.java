@@ -8,46 +8,61 @@ Contactos asociados a dicha ciudad.
 E. borrarContacto() que en base al número de teléfono elimina el contacto del directorio. */
 package practico5grupo3;
 
-import java.util.Map;
+import java.util.*;
 import java.util.Set;
 import java.util.TreeMap;
 import vistas.MenuPrincipal;
 
 public class Directorio {
     
-    TreeMap <Long,Contacto> directorioTelefono = new TreeMap<>();
+    private TreeMap<Long, Contacto> contactos;
 
-    public TreeMap<Long, Contacto> getDirectorioTelefono() {
-        return directorioTelefono;
+    public Directorio() {
+        contactos = new TreeMap<>();
     }
 
-    public void setDirectorioTelefono(TreeMap<Long, Contacto> directorioTelefono) {
-        this.directorioTelefono = directorioTelefono;
-    }
-    
-    public boolean agregarContacto(Contacto contacto, long numeroTelefono){
-        if(directorioTelefono.containsKey(numeroTelefono)){
-            return false;
-        } 
-        directorioTelefono.put(numeroTelefono, contacto);
+    // A. Agregar
+    public boolean agregarContacto(Long telefono, Contacto c) {
+        if(!contactos.containsKey(telefono)) {
+            contactos.put(telefono, c);
             return true;
+        }
+        return false; // ya existía ese número
     }
-    public Contacto buscarContacto(long numeroTelefono){
-        return directorioTelefono.get(numeroTelefono);
+
+    // B. Buscar por número
+    public Contacto buscarContacto(Long telefono) {
+        return contactos.get(telefono);
     }
-    public void buscarTelefono(){
-    
-       
+
+    // C. Buscar teléfonos por apellido
+    public Set<Long> buscarTelefono(String apellido) {
+        Set<Long> telefonos = new TreeSet<>();
+        for(Map.Entry<Long, Contacto> entry : contactos.entrySet()) {
+            if(entry.getValue().getApellido().equalsIgnoreCase(apellido)) {
+                telefonos.add(entry.getKey());
+            }
+        }
+        return telefonos;
     }
-    public void buscarContactos(){
-        
-        
+
+    // D. Buscar contactos por ciudad
+    public ArrayList<Contacto> buscarContactos(String ciudad) {
+        ArrayList<Contacto> lista = new ArrayList<>();
+        for(Contacto c : contactos.values()) {
+            if(c.getCiudad().equalsIgnoreCase(ciudad)) {
+                lista.add(c);
+            }
+        }
+        return lista;
     }
-    public void borrarContactos(){
-        
-    //public void borrarContacto(Long numeroTelefono) {
-    //if (contactos.containsKey(numeroTelefono)) {
-      //  contactos.remove(numeroTelefono);
-    //}
-}
+
+    // E. Borrar por teléfono
+    public boolean borrarContacto(Long telefono) {
+        if(contactos.containsKey(telefono)) {
+            contactos.remove(telefono);
+            return true;
+        }
+        return false;
+    }
 }
