@@ -15,6 +15,10 @@ public class Ciudad {
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
+
+    boolean equalsIgnoreCase(String ciudad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }
