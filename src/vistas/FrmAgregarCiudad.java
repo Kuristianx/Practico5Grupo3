@@ -26,18 +26,23 @@ public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlbAgarCdad = new javax.swing.JLabel();
+        jlbNbreCdad = new javax.swing.JLabel();
         jbguardar = new javax.swing.JButton();
         jbsalir = new javax.swing.JButton();
         jtciudad = new javax.swing.JTextField();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Agregar Ciudad");
+        jlbAgarCdad.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jlbAgarCdad.setText("Agregar Ciudad");
 
-        jLabel2.setText("Nombre ciudad:");
+        jlbNbreCdad.setText("Nombre ciudad:");
 
         jbguardar.setText("Guardar");
+        jbguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbguardarActionPerformed(evt);
+            }
+        });
 
         jbsalir.setText("Salir");
 
@@ -54,7 +59,7 @@ public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(jlbNbreCdad)
                     .addComponent(jbguardar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,16 +68,16 @@ public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
                 .addGap(53, 53, 53))
             .addGroup(layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jLabel1)
+                .addComponent(jlbAgarCdad)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(jlbAgarCdad)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jlbNbreCdad)
                     .addComponent(jtciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -88,12 +93,16 @@ public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtciudadActionPerformed
 
+    private void jbguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbguardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbguardarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jbguardar;
     private javax.swing.JButton jbsalir;
+    private javax.swing.JLabel jlbAgarCdad;
+    private javax.swing.JLabel jlbNbreCdad;
     private javax.swing.JTextField jtciudad;
     // End of variables declaration//GEN-END:variables
 }
