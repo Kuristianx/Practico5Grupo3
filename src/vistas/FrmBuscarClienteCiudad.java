@@ -166,14 +166,14 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
+    // Variables declaration - do not modify                     
     private javax.swing.JComboBox<Ciudad> jCCiudad;
     private javax.swing.JLabel jLBscarCtesPrCdad;
     private javax.swing.JLabel jLCdades;
     private javax.swing.JLabel jLabel1;
-=======
+    
     private void jbsalirItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jbsalirItemStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jbsalirItemStateChanged
