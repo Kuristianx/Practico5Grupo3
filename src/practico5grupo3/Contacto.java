@@ -7,10 +7,10 @@ public class Contacto {
     private Long dni;
     private String nombre;
     private String apellido;
-    private Ciudad ciudad;
+    private String ciudad;
     private String direccion;
 
-    public Contacto(Long dni, String nombre, String apellido, Ciudad ciudad, String direccion) {
+    public Contacto(Long dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -42,11 +42,11 @@ public class Contacto {
         this.apellido = apellido;
     }
 
-    public Ciudad getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
