@@ -1,10 +1,10 @@
 
 package practico5grupo3;
 
-public class Ciudad {
+public class Ciudades {
     private String ciudad;
 
-    public Ciudad(String ciudad) {
+    public Ciudades(String ciudad) {
         this.ciudad = ciudad;
     }
 

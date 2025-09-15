@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package vistas;
 
 /**
@@ -15,6 +12,8 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
      */
     public FrmBuscarClienteCiudad() {
         initComponents();
+        llenarCombo();
+        
     }
 
     /**
@@ -129,11 +128,11 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> jcbCiudades;
     private javax.swing.JLabel jlbBuscarClientes;
     // End of variables declaration//GEN-END:variables
-    private void cargarCombo(){
-    jcbCiudades.addItem("San Luis");
-    jcbCiudades.addItem("Villa Mercedes");
-    jcbCiudades.addItem("Juana Koslay");
-    jcbCiudades.addItem("El volcan");
+    private void llenarCombo(){
+    jcbCiudades.addItem("");
+    jcbCiudades.addItem("");
+    jcbCiudades.addItem("");
+    jcbCiudades.addItem("");
     
     }
 }

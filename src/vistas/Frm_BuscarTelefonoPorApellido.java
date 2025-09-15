@@ -29,23 +29,23 @@ private DefaultTableModel modelo=new DefaultTableModel();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jtapellido = new javax.swing.JTextField();
+        jblBcarTelPrApellido = new javax.swing.JLabel();
+        jlbApellido = new javax.swing.JLabel();
+        jtxldapellido = new javax.swing.JTextField();
         jbsalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtabla = new javax.swing.JTable();
+        jtbla = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jlistaapellidos = new javax.swing.JList<>();
+        jlistapellidos = new javax.swing.JList<>();
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Buscar Teléfono por Apellido");
+        jblBcarTelPrApellido.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jblBcarTelPrApellido.setText("Buscar Teléfono por Apellido");
 
-        jLabel2.setText("Apellido:");
+        jlbApellido.setText("Apellido:");
 
         jbsalir.setText("Salir");
 
-        jtabla.setModel(new javax.swing.table.DefaultTableModel(
+        jtbla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -64,9 +64,9 @@ private DefaultTableModel modelo=new DefaultTableModel();
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jtabla);
+        jScrollPane1.setViewportView(jtbla);
 
-        jScrollPane2.setViewportView(jlistaapellidos);
+        jScrollPane2.setViewportView(jlistapellidos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,14 +78,14 @@ private DefaultTableModel modelo=new DefaultTableModel();
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(173, 173, 173)
-                            .addComponent(jLabel1))
+                            .addComponent(jblBcarTelPrApellido))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(18, 18, 18)
-                            .addComponent(jLabel2)
+                            .addComponent(jlbApellido)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jtapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                                .addComponent(jtxldapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -93,13 +93,13 @@ private DefaultTableModel modelo=new DefaultTableModel();
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(jblBcarTelPrApellido)
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jtxldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbApellido))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -113,14 +113,14 @@ private DefaultTableModel modelo=new DefaultTableModel();
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jblBcarTelPrApellido;
     private javax.swing.JButton jbsalir;
-    private javax.swing.JList<String> jlistaapellidos;
-    private javax.swing.JTable jtabla;
-    private javax.swing.JTextField jtapellido;
+    private javax.swing.JLabel jlbApellido;
+    private javax.swing.JList<String> jlistapellidos;
+    private javax.swing.JTable jtbla;
+    private javax.swing.JTextField jtxldapellido;
     // End of variables declaration//GEN-END:variables
     private void cabecera (){
         modelo.addColumn("DNI");
@@ -129,7 +129,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
         modelo.addColumn("Dirección");
         modelo.addColumn("Ciudad");
         modelo.addColumn("Teléfono");
-        jtabla.setModel(modelo);
+        jtbla.setModel(modelo);
     }
 
 }
