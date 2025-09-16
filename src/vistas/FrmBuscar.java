@@ -44,10 +44,10 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         jbsalir = new javax.swing.JButton();
 
         jlbBdaDClte.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jlbBdaDClte.setForeground(new java.awt.Color(204, 204, 255));
+        jlbBdaDClte.setForeground(new java.awt.Color(0, 0, 0));
         jlbBdaDClte.setText("Busqueda de Clientes ");
 
-        jLabel2.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Telefono:");
 
         jttelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -58,19 +58,19 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
 
         jScrollPane1.setViewportView(jlista);
 
-        jlbDNI.setForeground(new java.awt.Color(204, 204, 255));
+        jlbDNI.setForeground(new java.awt.Color(0, 0, 0));
         jlbDNI.setText("Dni");
 
-        jlbApellido.setForeground(new java.awt.Color(204, 204, 255));
+        jlbApellido.setForeground(new java.awt.Color(0, 0, 0));
         jlbApellido.setText("Apellido:");
 
-        jlbNombre.setForeground(new java.awt.Color(204, 204, 255));
+        jlbNombre.setForeground(new java.awt.Color(0, 0, 0));
         jlbNombre.setText("Nombre");
 
-        jlbCiudad.setForeground(new java.awt.Color(204, 204, 255));
+        jlbCiudad.setForeground(new java.awt.Color(0, 0, 0));
         jlbCiudad.setText("Ciudad");
 
-        jlbDomicilio.setForeground(new java.awt.Color(204, 204, 255));
+        jlbDomicilio.setForeground(new java.awt.Color(0, 0, 0));
         jlbDomicilio.setText("Domicilio");
 
         jtapellido.addActionListener(new java.awt.event.ActionListener() {
