@@ -33,7 +33,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
-                              <Component id="jtxldapellido" pref="155" max="32767" attributes="0"/>
+                              <Component id="jtfApellido" pref="155" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="355" max="-2" attributes="0"/>
@@ -52,7 +52,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jtxldapellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtfApellido" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jlbApellido" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
         <Property name="text" type="java.lang.String" value="Apellido:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jtxldapellido">
+    <Component class="javax.swing.JTextField" name="jtfApellido">
     </Component>
     <Component class="javax.swing.JButton" name="jbsalir">
       <Properties>
@@ -158,12 +158,15 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JList" name="jlistapellidos">
+        <Component class="javax.swing.JList" name="jListApellidos">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
               <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jListApellidosValueChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

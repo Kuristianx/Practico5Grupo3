@@ -13,14 +13,15 @@ import practico5grupo3.Directorio;
  *
  * @author thezu
  */
-public class FrmAgregarCliente extends javax.swing.JInternalFrame {
+public class AgregarContacto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmAgregarCliente
      */
-    public FrmAgregarCliente() {
+    public AgregarContacto() {
         initComponents();
         cargarComboCiudades();
+        limpiarCampos();
     }
 
     /**

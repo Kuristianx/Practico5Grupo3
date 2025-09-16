@@ -4,20 +4,46 @@
  */
 package vistas;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
+import practico5grupo3.Directorio;
 
 /**
  *
  * @author Fede-
  */
-public class Frm_BuscarTelefonoPorApellido extends javax.swing.JInternalFrame {
+public class BuscarTelefonoPorApellido extends javax.swing.JInternalFrame {
 private DefaultTableModel modelo=new DefaultTableModel();
+DefaultListModel<String> modeloList = new DefaultListModel<>();
+private List<String> apellidos = new ArrayList<>();
     /**
      * Creates new form Frm_BuscarTelefonoPorApellido
      */
-    public Frm_BuscarTelefonoPorApellido() {
+    public BuscarTelefonoPorApellido() {
         initComponents();
+        buscarApellido();
         cabecera();
+        buscarApellido();
+        
+        jtfApellido.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent de) {
+                filtrarLista();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent de) {
+                filtrarLista();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent de) {
+                filtrarLista();
+            }
+        });
     }
 
     /**
@@ -31,12 +57,12 @@ private DefaultTableModel modelo=new DefaultTableModel();
 
         jblBcarTelPrApellido = new javax.swing.JLabel();
         jlbApellido = new javax.swing.JLabel();
-        jtxldapellido = new javax.swing.JTextField();
+        jtfApellido = new javax.swing.JTextField();
         jbsalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbla = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jlistapellidos = new javax.swing.JList<>();
+        jListApellidos = new javax.swing.JList<>();
 
         jblBcarTelPrApellido.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jblBcarTelPrApellido.setText("Buscar Teléfono por Apellido");
@@ -71,7 +97,12 @@ private DefaultTableModel modelo=new DefaultTableModel();
         });
         jScrollPane1.setViewportView(jtbla);
 
-        jScrollPane2.setViewportView(jlistapellidos);
+        jListApellidos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jListApellidosValueChanged(evt);
+            }
+        });
+        jScrollPane2.setViewportView(jListApellidos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,7 +121,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jtxldapellido, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                                .addComponent(jtfApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -103,7 +134,7 @@ private DefaultTableModel modelo=new DefaultTableModel();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtxldapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbApellido))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -121,16 +152,35 @@ private DefaultTableModel modelo=new DefaultTableModel();
         dispose();
     }//GEN-LAST:event_jbsalirActionPerformed
 
+    private void jListApellidosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListApellidosValueChanged
+        // TODO add your handling code here:
+        if(!evt.getValueIsAdjusting() && jListApellidos.getSelectedValue() != null){
+        String apellido = jListApellidos.getSelectedValue();
+        jtfApellido.setText(apellido);
+        
+        
+        modelo.setRowCount(0);
+        
+        List<Object[]> lista = new Directorio().buscarContactosPorApellido(apellido);
+        
+            for (Object[] fila : lista) {
+                modelo.addRow(fila);
+            }
+        
+        }
+                 
+    }//GEN-LAST:event_jListApellidosValueChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JList<String> jListApellidos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jblBcarTelPrApellido;
     private javax.swing.JButton jbsalir;
     private javax.swing.JLabel jlbApellido;
-    private javax.swing.JList<String> jlistapellidos;
     private javax.swing.JTable jtbla;
-    private javax.swing.JTextField jtxldapellido;
+    private javax.swing.JTextField jtfApellido;
     // End of variables declaration//GEN-END:variables
     private void cabecera (){
         modelo.addColumn("DNI");
@@ -141,5 +191,26 @@ private DefaultTableModel modelo=new DefaultTableModel();
         modelo.addColumn("Teléfono");
         jtbla.setModel(modelo);
     }
-
+private void buscarApellido(){
+        modeloList.clear();
+        apellidos.clear();
+        
+        for (String ape : new Directorio().obtenerTodosLosApellidos()) {
+            modeloList.addElement(ape);
+            apellidos.add(ape);
+        }
+        jListApellidos.setModel(modeloList);
+    }
+    
+    private void filtrarLista(){
+        String texto = jtfApellido.getText().trim();
+        modeloList.clear();
+        
+        for (String ape : apellidos) {
+            if(ape.startsWith(texto)){
+                modeloList.addElement(ape);
+            }
+        }
+    }
 }
+

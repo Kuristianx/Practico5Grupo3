@@ -17,7 +17,7 @@ import practico5grupo3.Directorio;
  *
  * @author Emiliano
  */
-public class FrmBuscar extends javax.swing.JInternalFrame {
+public class BuscarCliente extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmBuscar
@@ -26,12 +26,12 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
     private List <String> todosLosTelefonos= new ArrayList<>();
     
     
-    public FrmBuscar() {
+    public BuscarCliente() {
         initComponents();
         llenarListaTelefonos();
-        jlista.setModel(modeloLista);
+        jList1.setModel(modeloLista);
         
-        jttelefono.getDocument().addDocumentListener(new DocumentListener(){
+        jtTelefono.getDocument().addDocumentListener(new DocumentListener(){
             @Override
             public void insertUpdate(DocumentEvent de) {
                filtrarLista();
@@ -61,19 +61,19 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
 
         jlbBdaDClte = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jttelefono = new javax.swing.JTextField();
+        jtTelefono = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jlista = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>();
         jlbDNI = new javax.swing.JLabel();
-        jtdni = new javax.swing.JTextField();
+        jtDni = new javax.swing.JTextField();
         jlbApellido = new javax.swing.JLabel();
         jlbNombre = new javax.swing.JLabel();
         jlbCiudad = new javax.swing.JLabel();
         jlbDomicilio = new javax.swing.JLabel();
-        jtapellido = new javax.swing.JTextField();
-        jtnombre = new javax.swing.JTextField();
-        jtciudad = new javax.swing.JTextField();
-        jtdomic = new javax.swing.JTextField();
+        jtApellido = new javax.swing.JTextField();
+        jtNombre = new javax.swing.JTextField();
+        jtCiudad = new javax.swing.JTextField();
+        jtDomicilio = new javax.swing.JTextField();
         jbsalir = new javax.swing.JButton();
 
         jlbBdaDClte.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -83,18 +83,18 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Telefono:");
 
-        jttelefono.addActionListener(new java.awt.event.ActionListener() {
+        jtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jttelefonoActionPerformed(evt);
+                jtTelefonoActionPerformed(evt);
             }
         });
 
-        jlista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jlistaValueChanged(evt);
+                jList1ValueChanged(evt);
             }
         });
-        jScrollPane1.setViewportView(jlista);
+        jScrollPane1.setViewportView(jList1);
 
         jlbDNI.setForeground(new java.awt.Color(0, 0, 0));
         jlbDNI.setText("Dni");
@@ -111,15 +111,15 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         jlbDomicilio.setForeground(new java.awt.Color(0, 0, 0));
         jlbDomicilio.setText("Domicilio");
 
-        jtapellido.addActionListener(new java.awt.event.ActionListener() {
+        jtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtapellidoActionPerformed(evt);
+                jtApellidoActionPerformed(evt);
             }
         });
 
-        jtnombre.addActionListener(new java.awt.event.ActionListener() {
+        jtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtnombreActionPerformed(evt);
+                jtNombreActionPerformed(evt);
             }
         });
 
@@ -140,18 +140,17 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlbDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtdni, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addComponent(jtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlbApellido)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jbsalir)
@@ -159,12 +158,13 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlbNombre)
                                     .addComponent(jlbCiudad)
-                                    .addComponent(jlbDomicilio))
+                                    .addComponent(jlbDomicilio)
+                                    .addComponent(jlbApellido))
                                 .addGap(24, 24, 24)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jtdomic, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                    .addComponent(jtciudad)
-                                    .addComponent(jtnombre))))
+                                    .addComponent(jtDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(jtCiudad)
+                                    .addComponent(jtNombre))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -176,34 +176,41 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jlbBdaDClte, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlbDNI)
-                    .addComponent(jtdni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlbApellido)
-                            .addComponent(jtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(3, 3, 3)
+                            .addComponent(jLabel2)
+                            .addComponent(jtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbDNI)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jlbApellido)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlbNombre)
-                            .addComponent(jtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jtciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbCiudad))
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtdomic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbCiudad)
+                            .addComponent(jtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbDomicilio)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jbsalir)
                 .addGap(42, 42, 42))
         );
@@ -211,46 +218,42 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jttelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jttelefonoActionPerformed
+    private void jtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jttelefonoActionPerformed
+    }//GEN-LAST:event_jtTelefonoActionPerformed
 
-    private void jtapellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtapellidoActionPerformed
+    private void jtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtApellidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtapellidoActionPerformed
+    }//GEN-LAST:event_jtApellidoActionPerformed
 
-    private void jtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnombreActionPerformed
+    private void jtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtnombreActionPerformed
+    }//GEN-LAST:event_jtNombreActionPerformed
 
     private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_jbsalirActionPerformed
 
-    private void jlistaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlistaValueChanged
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
         // TODO add your handling code here:
-        
-            if(!evt.getValueIsAdjusting() && jlista.getSelectedValue() != null){
-        // primero creamos una variable de tipo telefono para retirarla desde la tabla 
-          
-        
-        Long telefono = Long.parseLong(jlista.getSelectedValue());
+        if(!evt.getValueIsAdjusting() && jList1.getSelectedValue() != null){
+       
+        Long telefono = Long.parseLong(jList1.getSelectedValue());
             String telefono2 = Long.toString(telefono);
-            jttelefono.setText(telefono2);
-            // con esta variable de tipo telefono retiraremos de un metodo q esta en directorio
+            jtTelefono.setText(telefono2);
             
             Contacto cell = new Directorio().buscarContacto(telefono);
-            // retiramos informacion de ese contacto buscado por telefono
-            jttelefono.setText(String.valueOf(telefono));
-            jtdni.setText(String.valueOf(cell.getDni()));
-            jtapellido.setText(cell.getApellido());
-            jtnombre.setText(cell.getNombre());
-            jtciudad.setText(cell.getCiudad());
-            jtdomic.setText(cell.getDireccion());
+            
+            jtTelefono.setText(String.valueOf(telefono));
+            jtDni.setText(String.valueOf(cell.getDni()));
+            jtApellido.setText(cell.getApellido());
+            jtNombre.setText(cell.getNombre());
+            jtCiudad.setText(cell.getCiudad());
+            jtDomicilio.setText(cell.getDireccion());
         }
     
-    }//GEN-LAST:event_jlistaValueChanged
+    }//GEN-LAST:event_jList1ValueChanged
     private void llenarListaTelefonos(){
 
         modeloLista.clear();
@@ -261,7 +264,7 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         }
     }
     private void filtrarLista(){
-        String texto  = jttelefono.getText().trim();
+        String texto  = jtTelefono.getText().trim();
         modeloLista.clear();
         for(String tel: todosLosTelefonos){
             if(tel.startsWith(texto)){
@@ -272,6 +275,7 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbsalir;
     private javax.swing.JLabel jlbApellido;
@@ -280,12 +284,11 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jlbDNI;
     private javax.swing.JLabel jlbDomicilio;
     private javax.swing.JLabel jlbNombre;
-    private javax.swing.JList<String> jlista;
-    private javax.swing.JTextField jtapellido;
-    private javax.swing.JTextField jtciudad;
-    private javax.swing.JTextField jtdni;
-    private javax.swing.JTextField jtdomic;
-    private javax.swing.JTextField jtnombre;
-    private javax.swing.JTextField jttelefono;
+    private javax.swing.JTextField jtApellido;
+    private javax.swing.JTextField jtCiudad;
+    private javax.swing.JTextField jtDni;
+    private javax.swing.JTextField jtDomicilio;
+    private javax.swing.JTextField jtNombre;
+    private javax.swing.JTextField jtTelefono;
     // End of variables declaration//GEN-END:variables
 }

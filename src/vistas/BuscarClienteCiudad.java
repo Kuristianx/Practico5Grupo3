@@ -1,19 +1,26 @@
 
 package vistas;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import practico5grupo3.Contacto;
+import practico5grupo3.Directorio;
+
 /**
  *
  * @author Fede-
  */
-public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
+public class BuscarClienteCiudad extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmBuscarClienteCiudad
      */
-    public FrmBuscarClienteCiudad() {
+    DefaultTableModel modeloTabla = new DefaultTableModel();
+    
+    public BuscarClienteCiudad() {
         initComponents();
-        llenarCombo();
-        
+        cargarCiudades();
+        inicializarTabla();
     }
 
     /**
@@ -115,6 +122,10 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
 
     private void jcbCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCiudadesActionPerformed
         // TODO add your handling code here:
+        String ciudadSeleccionada= (String) jcbCiudades.getSelectedItem();
+        if(ciudadSeleccionada !=null){
+            cargarContactosPorCiudad(ciudadSeleccionada);
+        }
     }//GEN-LAST:event_jcbCiudadesActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
@@ -122,7 +133,45 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jBSalirActionPerformed
 
-
+    private void cargarCiudades(){
+        jcbCiudades.removeAllItems();
+        for(String ciudad: Directorio.todasLasCiudades()){
+            jcbCiudades.addItem(ciudad);
+        }
+    }
+    
+    private void inicializarTabla(){
+        modeloTabla.addColumn("DNI");
+        modeloTabla.addColumn("Apellido");
+        modeloTabla.addColumn("Nombre");
+        modeloTabla.addColumn("Direccion");
+        modeloTabla.addColumn("Ciudad");
+        modeloTabla.addColumn("Telefono");
+        jTContacto.setModel(modeloTabla);
+    }
+    
+    private void cargarContactosPorCiudad(String ciudad){
+        modeloTabla.setRowCount(0); 
+        
+        ArrayList<Contacto> contactos= Directorio.contactosPorCiudad(ciudad);
+        
+        
+        for(Contacto c: contactos){
+            Long telefono= Directorio.BuscarTlefonoPorContacto(c);
+            modeloTabla.addRow(new Object[]{
+                c.getDni(),
+                c.getApellido(),
+                c.getNombre(),
+                c.getDireccion(),
+                c.getCiudad(),
+                telefono
+            });
+        }
+        
+        jTContacto.setModel(modeloTabla);
+        
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBSalir;
     private javax.swing.JList<String> jLCiudades;
@@ -133,11 +182,5 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> jcbCiudades;
     private javax.swing.JLabel jlbBuscarClientes;
     // End of variables declaration//GEN-END:variables
-    private void llenarCombo(){
-    jcbCiudades.addItem("");
-    jcbCiudades.addItem("");
-    jcbCiudades.addItem("");
-    jcbCiudades.addItem("");
     
-    }
 }

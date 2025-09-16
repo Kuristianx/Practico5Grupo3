@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author Fede-
  */
-public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
+public class AgregarCiudad extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FrmAgregarCiudad
      */
-    public FrmAgregarCiudad() {
+    public AgregarCiudad() {
         initComponents();
     }
 

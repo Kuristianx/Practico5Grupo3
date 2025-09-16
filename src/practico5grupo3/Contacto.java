@@ -5,13 +5,8 @@ import java.util.ArrayList;
 
 
 public class Contacto {
-        
+    private String  nombre, apellido, ciudad, direccion;    
     private int dni;
-    private String nombre;
-    private String apellido;
-    private String ciudad;
-    private String direccion;
-
 
     public Contacto(int dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
@@ -21,19 +16,9 @@ public class Contacto {
         this.direccion = direccion;
     }
 
-   
-    public long getDni() {
+    public int getDni() {
         return dni;
     }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
 
     public void setDni(int dni) {
         this.dni = dni;
@@ -55,6 +40,14 @@ public class Contacto {
         this.apellido = apellido;
     }
 
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
     public String getDireccion() {
         return direccion;
     }
@@ -62,10 +55,8 @@ public class Contacto {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-
-    
-
-
-
 }
+
+
+
+

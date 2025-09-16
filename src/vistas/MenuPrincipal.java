@@ -151,7 +151,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmBuscarTelefonoPorApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBuscarTelefonoPorApellidoActionPerformed
         // TODO add your handling code here:
-        Frm_BuscarTelefonoPorApellido btpa=new Frm_BuscarTelefonoPorApellido();
+        BuscarTelefonoPorApellido btpa=new BuscarTelefonoPorApellido();
         btpa.setVisible(true);
         escritorio.add(btpa);
         escritorio.moveToFront(btpa);
@@ -164,7 +164,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmiAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarClienteActionPerformed
         // TODO add your handling code here:
-        FrmAgregarCliente ac=new FrmAgregarCliente();
+        AgregarContacto ac=new AgregarContacto();
         ac.setVisible(true);
         escritorio.add(ac);
         escritorio.moveToFront(ac);
@@ -172,7 +172,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmiBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBuscarClienteActionPerformed
         // TODO add your handling code here:
-        FrmBuscar buscar=new FrmBuscar();
+        BuscarCliente buscar=new BuscarCliente();
         buscar.setVisible(true);
         escritorio.add(buscar);
         escritorio.moveToFront(buscar);
@@ -180,7 +180,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmiBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBorrarClienteActionPerformed
         // TODO add your handling code here:
-        FrmBorrar borrar=new FrmBorrar();
+        BorrarCliente borrar=new BorrarCliente();
         borrar.setVisible(true);
         escritorio.add(borrar);
         escritorio.moveToFront(borrar);
@@ -188,7 +188,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmBuscarClientesPorCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBuscarClientesPorCiudadActionPerformed
         // TODO add your handling code here:
-        FrmBuscarClienteCiudad bc=new FrmBuscarClienteCiudad();
+        BuscarClienteCiudad bc=new BuscarClienteCiudad();
         bc.setVisible(true);
         escritorio.add(bc);
         escritorio.moveToFront(bc);
@@ -196,7 +196,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmiAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarCiudadActionPerformed
         // TODO add your handling code here:
-        FrmAgregarCiudad aCiudad=new FrmAgregarCiudad();
+        AgregarCiudad aCiudad=new AgregarCiudad();
         aCiudad.setVisible(true);
         escritorio.add(aCiudad);
         escritorio.moveToFront(aCiudad);

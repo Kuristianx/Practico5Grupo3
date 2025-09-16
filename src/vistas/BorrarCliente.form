@@ -25,7 +25,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
-                  <Component id="jTexDni" pref="151" max="32767" attributes="0"/>
+                  <Component id="jTdni" pref="151" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jScrollPane2" min="-2" pref="452" max="-2" attributes="0"/>
@@ -38,7 +38,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jBttonBrClte" min="-2" max="-2" attributes="0"/>
+              <Component id="jBEliminar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
               <Component id="jbSalir" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jlbDNI" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTexDni" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTdni" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="108" max="-2" attributes="0"/>
@@ -64,7 +64,7 @@
               <EmptySpace pref="79" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbSalir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBttonBrClte" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
@@ -94,7 +94,7 @@
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTexDni">
+    <Component class="javax.swing.JTextField" name="jTdni">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -103,12 +103,15 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JList" name="jLisT">
+        <Component class="javax.swing.JList" name="jListDni">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
               <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jListDniValueChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -122,7 +125,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTblaDtosPer">
+        <Component class="javax.swing.JTable" name="jTable1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="4">
@@ -183,10 +186,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSalirActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jBttonBrClte">
+    <Component class="javax.swing.JButton" name="jBEliminar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Borrar Cliente"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEliminarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
