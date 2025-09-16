@@ -19,11 +19,10 @@ public class Directorio {
     private static TreeMap <Long, Contacto> informacion =new TreeMap<>();
 
     public Directorio() {
-        informacion = new TreeMap<>();
     }
 
     // A. Agregar
-    public static boolean agregarContacto(Long telefono, Contacto c) {
+    public static boolean agregarContacto(long telefono, Contacto c) {
         if(telefono<=0||c==null){
             return false;
         }
@@ -38,7 +37,7 @@ public class Directorio {
     }
 
     // B. Buscar por número
-    public static Contacto buscarContacto(Long telefono) {
+    public static Contacto buscarContacto(long telefono) {
         return informacion.get(telefono);
     }
 
@@ -65,7 +64,7 @@ public class Directorio {
     }
 
     // E. Borrar por teléfono
-    public boolean borrarContacto(Long telefono) {
+    public boolean borrarContacto(long telefono) {
         if(informacion.containsKey(telefono)) {
             informacion.remove(telefono);
             return true;

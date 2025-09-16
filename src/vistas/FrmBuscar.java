@@ -231,6 +231,25 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
     private void jlistaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlistaValueChanged
         // TODO add your handling code here:
         
+            if(!evt.getValueIsAdjusting() && jlista.getSelectedValue() != null){
+        // primero creamos una variable de tipo telefono para retirarla desde la tabla 
+          
+        
+        Long telefono = Long.parseLong(jlista.getSelectedValue());
+            String telefono2 = Long.toString(telefono);
+            jttelefono.setText(telefono2);
+            // con esta variable de tipo telefono retiraremos de un metodo q esta en directorio
+            
+            Contacto cell = new Directorio().buscarContacto(telefono);
+            // retiramos informacion de ese contacto buscado por telefono
+            jttelefono.setText(String.valueOf(telefono));
+            jtdni.setText(String.valueOf(cell.getDni()));
+            jtapellido.setText(cell.getApellido());
+            jtnombre.setText(cell.getNombre());
+            jtciudad.setText(cell.getCiudad());
+            jtdomic.setText(cell.getDireccion());
+        }
+    
     }//GEN-LAST:event_jlistaValueChanged
     private void llenarListaTelefonos(){
 
