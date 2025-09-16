@@ -4,7 +4,8 @@
  */
 package vistas;
 
-import practico5grupo3.Ciudad;
+
+import javax.swing.JOptionPane;
 import practico5grupo3.Contacto;
 import practico5grupo3.Directorio;
 
@@ -19,6 +20,7 @@ public class FrmAgregarCliente extends javax.swing.JInternalFrame {
      */
     public FrmAgregarCliente() {
         initComponents();
+        cargarComboCiudades();
     }
 
     /**
@@ -47,8 +49,6 @@ public class FrmAgregarCliente extends javax.swing.JInternalFrame {
         jtfTelefono = new javax.swing.JTextField();
         jbGuardar = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
-
-        setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -206,12 +206,61 @@ public class FrmAgregarCliente extends javax.swing.JInternalFrame {
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         // TODO add your handling code here:
-        Contacto direc= new Contacto();
-            direc.setNombre(jtfNombre.getText());
-            direc.setApellido(jtfApellido.getText());
+        if(!validarCampos()){
+            return;}
+        try{
+            int dni=Integer.parseInt(jtfDNI.getText());
+            String nombre=jtfNombre.getName();
+            String apellido=jtfApellido.getText();
+            String ciudad=(String)jcbCiudad.getSelectedItem();
+            String domicilio=jtfDomicilio.getText();
             
+            long telefono=Long.parseLong(jtfTelefono.getText());
+            
+            Contacto cont= new Contacto (dni,nombre,apellido,ciudad,domicilio);
+            
+            boolean verificacion= Directorio.agregarContacto(telefono, cont);
+            
+            if (verificacion){
+                JOptionPane.showMessageDialog(this, "Se agregó correctamente el cliente en el directorio");
+                limpiarCampos();
+            }else{
+                JOptionPane.showMessageDialog(this, "No se pudo agregar contacto, el telefono está duplicado");
+            
+            }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Los campos telefono y DNI deben de ser numeros");
+        }
     }//GEN-LAST:event_jbGuardarActionPerformed
-
+    
+    private void cargarComboCiudades(){
+        jcbCiudad.removeAllItems();
+        for(String ciudad: MenuPrincipal.ciudades){
+            jcbCiudad.addItem(ciudad);
+            
+        }
+    }
+    
+    private boolean validarCampos(){
+        if(jtfDNI.getText().isEmpty()||
+                jtfNombre.getText().isEmpty()||
+                jtfApellido.getText().isEmpty()||
+                jtfDomicilio.getText().isEmpty()||
+                jtfTelefono.getText().isEmpty()||
+                jcbCiudad.getSelectedItem()==null){
+            JOptionPane.showMessageDialog(this, "Complete todos los campos");
+            return false;
+        }
+        return true;
+    }
+    
+    private void limpiarCampos(){
+        jtfDNI.setText("");
+        jtfNombre.setText("");
+        jtfApellido.setText("");
+        jtfDomicilio.setText("");
+        jtfTelefono.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -225,7 +274,7 @@ public class FrmAgregarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbSalir;
-    private javax.swing.JComboBox<Ciudad> jcbCiudad;
+    private javax.swing.JComboBox<String> jcbCiudad;
     private javax.swing.JTextField jtfApellido;
     private javax.swing.JTextField jtfDNI;
     private javax.swing.JTextField jtfDomicilio;

@@ -15,30 +15,37 @@ import vistas.MenuPrincipal;
 
 public class Directorio {
     
-    private TreeMap<Long, Contacto> contactos;
+    private long telefono;
+    private static TreeMap <Long, Contacto> informacion =new TreeMap<>();
 
     public Directorio() {
-        contactos = new TreeMap<>();
+        informacion = new TreeMap<>();
     }
 
     // A. Agregar
-    public boolean agregarContacto(Long telefono, Contacto c) {
-        if(!contactos.containsKey(telefono)) {
-            contactos.put(telefono, c);
-            return true;
+    public static boolean agregarContacto(Long telefono, Contacto c) {
+        if(telefono<=0||c==null){
+            return false;
         }
-        return false; // ya existía ese número
+        if(informacion.containsKey(telefono)){
+            return false;
+        }
+        informacion.put(telefono, c);
+        return true;
+    }
+    public static Set<Long> todosLosTelefonos(){
+        return new TreeSet<>(informacion.keySet());
     }
 
     // B. Buscar por número
-    public Contacto buscarContacto(Long telefono) {
-        return contactos.get(telefono);
+    public static Contacto buscarContacto(Long telefono) {
+        return informacion.get(telefono);
     }
 
     // C. Buscar teléfonos por apellido
     public Set<Long> buscarTelefono(String apellido) {
         Set<Long> telefonos = new TreeSet<>();
-        for(Map.Entry<Long, Contacto> entry : contactos.entrySet()) {
+        for(Map.Entry<Long, Contacto> entry : informacion.entrySet()) {
             if(entry.getValue().getApellido().equalsIgnoreCase(apellido)) {
                 telefonos.add(entry.getKey());
             }
@@ -47,10 +54,10 @@ public class Directorio {
     }
 
     // D. Buscar contactos por ciudad
-    public ArrayList<Contacto> buscarContactos(ArrayList <Ciudad> ciudades) {
+    public ArrayList<Contacto> buscarContactos(String ciudad) {
         ArrayList<Contacto> lista = new ArrayList<>();
-        for(Contacto c : contactos.values()) {
-            if(c.getCiudades().equals(ciudades)) {
+        for(Contacto c : informacion.values()) {
+            if(c.getCiudad().equalsIgnoreCase(ciudad)) {
                 lista.add(c);
             }
         }
@@ -59,8 +66,8 @@ public class Directorio {
 
     // E. Borrar por teléfono
     public boolean borrarContacto(Long telefono) {
-        if(contactos.containsKey(telefono)) {
-            contactos.remove(telefono);
+        if(informacion.containsKey(telefono)) {
+            informacion.remove(telefono);
             return true;
         }
         return false;

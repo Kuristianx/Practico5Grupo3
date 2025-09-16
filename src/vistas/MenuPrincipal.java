@@ -4,6 +4,9 @@
  */
 package vistas;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author alybe
@@ -17,6 +20,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form MenuPrincipal
      */
+    public static Set<String> ciudades=new HashSet<>();
     public MenuPrincipal() {
         initComponents();
     }

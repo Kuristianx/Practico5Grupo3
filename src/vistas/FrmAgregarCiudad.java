@@ -4,6 +4,8 @@
  */
 package vistas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fede-
@@ -100,6 +102,15 @@ public class FrmAgregarCiudad extends javax.swing.JInternalFrame {
 
     private void jbguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbguardarActionPerformed
         // TODO add your handling code here:
+        String ciudad=jtciudad.getText();
+        if(!ciudad.isEmpty()){
+            MenuPrincipal.ciudades.add(ciudad);
+            JOptionPane.showMessageDialog(null, "Ciudad agregada con exito.");
+            jtciudad.setText("");
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe ingresar un nombre de ciudad.");
+            
+        }
     }//GEN-LAST:event_jbguardarActionPerformed
 
     private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed

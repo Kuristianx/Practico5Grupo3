@@ -6,37 +6,38 @@ import java.util.ArrayList;
 
 public class Contacto {
         
-    private Long dni;
+    private int dni;
     private String nombre;
     private String apellido;
-    private ArrayList <Ciudad> ciudades=new ArrayList<>();
+    private String ciudad;
     private String direccion;
 
     public Contacto() {
     }
 
-    public Contacto(Long dni, String nombre, String apellido, String direccion) {
+    public Contacto(int dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.ciudad = ciudad;
         this.direccion = direccion;
     }
 
-    public Long getDni() {
+   
+    public long getDni() {
         return dni;
     }
 
-    public ArrayList<Ciudad> getCiudades() {
-        return ciudades;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setCiudades(ArrayList<Ciudad> ciudades) {
-        this.ciudades = ciudades;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
-    
-    
 
-    public void setDni(Long dni) {
+
+    public void setDni(int dni) {
         this.dni = dni;
     }
 

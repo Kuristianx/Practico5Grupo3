@@ -4,6 +4,15 @@
  */
 package vistas;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import practico5grupo3.Contacto;
+import practico5grupo3.Directorio;
+
 /**
  *
  * @author Emiliano
@@ -13,8 +22,32 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
     /**
      * Creates new form FrmBuscar
      */
+    DefaultListModel<String> modeloLista= new DefaultListModel<>();
+    private List <String> todosLosTelefonos= new ArrayList<>();
+    
+    
     public FrmBuscar() {
         initComponents();
+        llenarListaTelefonos();
+        jlista.setModel(modeloLista);
+        
+        jttelefono.getDocument().addDocumentListener(new DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent de) {
+               filtrarLista();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent de) {
+                 filtrarLista();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent de) {
+                filtrarLista();
+            }
+
+        });
     }
 
     /**
@@ -56,6 +89,11 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
             }
         });
 
+        jlista.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jlistaValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(jlista);
 
         jlbDNI.setForeground(new java.awt.Color(0, 0, 0));
@@ -190,6 +228,28 @@ public class FrmBuscar extends javax.swing.JInternalFrame {
         dispose();
     }//GEN-LAST:event_jbsalirActionPerformed
 
+    private void jlistaValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlistaValueChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jlistaValueChanged
+    private void llenarListaTelefonos(){
+
+        modeloLista.clear();
+        todosLosTelefonos.clear();
+        for (Long tel : Directorio.todosLosTelefonos()) {
+            modeloLista.addElement(String.valueOf(tel));
+            todosLosTelefonos.add(String.valueOf(tel));
+        }
+    }
+    private void filtrarLista(){
+        String texto  = jttelefono.getText().trim();
+        modeloLista.clear();
+        for(String tel: todosLosTelefonos){
+            if(tel.startsWith(texto)){
+                modeloLista.addElement(tel);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
