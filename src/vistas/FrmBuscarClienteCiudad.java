@@ -35,7 +35,7 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
         jBSalir = new javax.swing.JButton();
 
         jlbBuscarClientes.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jlbBuscarClientes.setForeground(new java.awt.Color(204, 204, 255));
+        jlbBuscarClientes.setForeground(new java.awt.Color(0, 0, 0));
         jlbBuscarClientes.setText("Buscar Cliente De Directorio Por Ciudad");
 
         jTContacto.setModel(new javax.swing.table.DefaultTableModel(
@@ -53,6 +53,7 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
 
         jScrollPane2.setViewportView(jLCiudades);
 
+        jblCiudades.setForeground(new java.awt.Color(0, 0, 0));
         jblCiudades.setText("Ciudades:");
 
         jcbCiudades.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +62,13 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
             }
         });
 
+        jBSalir.setForeground(new java.awt.Color(0, 0, 0));
         jBSalir.setText("Salir");
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,6 +116,11 @@ public class FrmBuscarClienteCiudad extends javax.swing.JInternalFrame {
     private void jcbCiudadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCiudadesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbCiudadesActionPerformed
+
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

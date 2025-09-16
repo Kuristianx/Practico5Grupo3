@@ -44,6 +44,11 @@ private DefaultTableModel modelo=new DefaultTableModel();
         jlbApellido.setText("Apellido:");
 
         jbsalir.setText("Salir");
+        jbsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbsalirActionPerformed(evt);
+            }
+        });
 
         jtbla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,6 +115,11 @@ private DefaultTableModel modelo=new DefaultTableModel();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jbsalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

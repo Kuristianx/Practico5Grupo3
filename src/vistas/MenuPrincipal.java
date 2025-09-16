@@ -10,9 +10,9 @@ package vistas;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    public static Object getDirectorio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+//    public static Object getDirectorio() {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
 
     /**
      * Creates new form MenuPrincipal
@@ -30,12 +30,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmClientes = new javax.swing.JMenu();
         jmiAgregarCliente = new javax.swing.JMenuItem();
+        jmiBuscarCliente = new javax.swing.JMenuItem();
         jmiBorrarCliente = new javax.swing.JMenuItem();
-        jmBorrarCliente = new javax.swing.JMenuItem();
         jmDirectorio = new javax.swing.JMenu();
         jmBuscarClientesPorCiudad = new javax.swing.JMenuItem();
         jmBuscarTelefonoPorApellido = new javax.swing.JMenuItem();
@@ -46,15 +46,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 503, Short.MAX_VALUE)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1001, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 346, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 731, Short.MAX_VALUE)
         );
 
         jmClientes.setText("Clientes");
@@ -67,17 +67,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jmClientes.add(jmiAgregarCliente);
 
-        jmiBorrarCliente.setText("BuscarCliente");
-        jmClientes.add(jmiBorrarCliente);
+        jmiBuscarCliente.setText("BuscarCliente");
+        jmiBuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBuscarClienteActionPerformed(evt);
+            }
+        });
+        jmClientes.add(jmiBuscarCliente);
 
-        jmBorrarCliente.setText("BorrarCliente");
-        jmClientes.add(jmBorrarCliente);
+        jmiBorrarCliente.setText("BorrarCliente");
+        jmiBorrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiBorrarClienteActionPerformed(evt);
+            }
+        });
+        jmClientes.add(jmiBorrarCliente);
 
         jMenuBar1.add(jmClientes);
 
         jmDirectorio.setText("Directorio");
 
         jmBuscarClientesPorCiudad.setText("BuscarClientesPorCiudad");
+        jmBuscarClientesPorCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmBuscarClientesPorCiudadActionPerformed(evt);
+            }
+        });
         jmDirectorio.add(jmBuscarClientesPorCiudad);
 
         jmBuscarTelefonoPorApellido.setText("BuscarTelefonoPorApellido");
@@ -93,6 +108,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jmCiudades.setText("Ciudades");
 
         jmiAgregarCiudad.setText("AgregarCiudad");
+        jmiAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAgregarCiudadActionPerformed(evt);
+            }
+        });
         jmCiudades.add(jmiAgregarCiudad);
 
         jMenuBar1.add(jmCiudades);
@@ -115,13 +135,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -129,6 +147,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmBuscarTelefonoPorApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBuscarTelefonoPorApellidoActionPerformed
         // TODO add your handling code here:
+        Frm_BuscarTelefonoPorApellido btpa=new Frm_BuscarTelefonoPorApellido();
+        btpa.setVisible(true);
+        escritorio.add(btpa);
+        escritorio.moveToFront(btpa);
     }//GEN-LAST:event_jmBuscarTelefonoPorApellidoActionPerformed
 
     private void JmiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JmiSalirActionPerformed
@@ -138,8 +160,45 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jmiAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarClienteActionPerformed
         // TODO add your handling code here:
+        FrmAgregarCliente ac=new FrmAgregarCliente();
+        ac.setVisible(true);
+        escritorio.add(ac);
+        escritorio.moveToFront(ac);
     }//GEN-LAST:event_jmiAgregarClienteActionPerformed
 
+    private void jmiBuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBuscarClienteActionPerformed
+        // TODO add your handling code here:
+        FrmBuscar buscar=new FrmBuscar();
+        buscar.setVisible(true);
+        escritorio.add(buscar);
+        escritorio.moveToFront(buscar);
+    }//GEN-LAST:event_jmiBuscarClienteActionPerformed
+
+    private void jmiBorrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBorrarClienteActionPerformed
+        // TODO add your handling code here:
+        FrmBorrar borrar=new FrmBorrar();
+        borrar.setVisible(true);
+        escritorio.add(borrar);
+        escritorio.moveToFront(borrar);
+    }//GEN-LAST:event_jmiBorrarClienteActionPerformed
+
+    private void jmBuscarClientesPorCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBuscarClientesPorCiudadActionPerformed
+        // TODO add your handling code here:
+        FrmBuscarClienteCiudad bc=new FrmBuscarClienteCiudad();
+        bc.setVisible(true);
+        escritorio.add(bc);
+        escritorio.moveToFront(bc);
+    }//GEN-LAST:event_jmBuscarClientesPorCiudadActionPerformed
+
+    private void jmiAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarCiudadActionPerformed
+        // TODO add your handling code here:
+        FrmAgregarCiudad aCiudad=new FrmAgregarCiudad();
+        aCiudad.setVisible(true);
+        escritorio.add(aCiudad);
+        escritorio.moveToFront(aCiudad);
+    }//GEN-LAST:event_jmiAgregarCiudadActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -178,9 +237,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu JmSalir;
     private javax.swing.JMenuItem JmiSalir;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jmBorrarCliente;
     private javax.swing.JMenuItem jmBuscarClientesPorCiudad;
     private javax.swing.JMenuItem jmBuscarTelefonoPorApellido;
     private javax.swing.JMenu jmCiudades;
@@ -189,5 +247,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiAgregarCiudad;
     private javax.swing.JMenuItem jmiAgregarCliente;
     private javax.swing.JMenuItem jmiBorrarCliente;
+    private javax.swing.JMenuItem jmiBuscarCliente;
     // End of variables declaration//GEN-END:variables
 }

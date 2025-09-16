@@ -47,10 +47,10 @@ public class Directorio {
     }
 
     // D. Buscar contactos por ciudad
-    public ArrayList<Contacto> buscarContactos(String ciudad) {
+    public ArrayList<Contacto> buscarContactos(ArrayList <Ciudad> ciudades) {
         ArrayList<Contacto> lista = new ArrayList<>();
         for(Contacto c : contactos.values()) {
-            if(c.getCiudad().equalsIgnoreCase(ciudad)) {
+            if(c.getCiudades().equals(ciudades)) {
                 lista.add(c);
             }
         }

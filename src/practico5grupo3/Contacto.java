@@ -1,26 +1,40 @@
 
 package practico5grupo3;
 
+import java.util.ArrayList;
+
 
 public class Contacto {
         
     private Long dni;
     private String nombre;
     private String apellido;
-    private String ciudad;
+    private ArrayList <Ciudad> ciudades=new ArrayList<>();
     private String direccion;
 
-    public Contacto(Long dni, String nombre, String apellido, String ciudad, String direccion) {
+    public Contacto() {
+    }
+
+    public Contacto(Long dni, String nombre, String apellido, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.ciudad = ciudad;
         this.direccion = direccion;
     }
 
     public Long getDni() {
         return dni;
     }
+
+    public ArrayList<Ciudad> getCiudades() {
+        return ciudades;
+    }
+
+    public void setCiudades(ArrayList<Ciudad> ciudades) {
+        this.ciudades = ciudades;
+    }
+    
+    
 
     public void setDni(Long dni) {
         this.dni = dni;
@@ -42,14 +56,6 @@ public class Contacto {
         this.apellido = apellido;
     }
 
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
     public String getDireccion() {
         return direccion;
     }
@@ -60,7 +66,7 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", ciudad=" + ciudad + ", direccion=" + direccion + '}';
+        return "Contacto{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + '}';
     }
 
     
